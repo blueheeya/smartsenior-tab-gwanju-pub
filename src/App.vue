@@ -1,24 +1,60 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import MainHeader from './components/layout/MainHeader.vue'
-import SubHeader from './components/layout/SubHeader.vue'
+import UserInfo from './components/layout/UserInfo.vue'
 import SwiperData from './components/swiper/SwiperData.vue'
+import IconMenuBlood from './components/icons/IconMenuBlood.vue'
+const menus = ref([
+  {
+    id: '1',
+    title: '혈압측정',
+    icon: '<IconMenuBlood />',
+    link: '/blood'
+  },
+  {
+    id: '2',
+    title: '신장측정',
+    icon: '',
+    link: '/height'
+  },
+  {
+    id: '3',
+    title: '체성분측정',
+    icon: '',
+    link: '/body'
+  },
+  {
+    id: '4',
+    title: '종합결과',
+    icon: '',
+    link: '/synthesis'
+  }
+])
+const userName = ref('홍길동')
+// const route = useRoute()
 </script>
 <template>
   <MainHeader />
   <SwiperData />
-  <SubHeader userName="홍길동" />
-  <RouterView />
+  <component :is="currentHeaderComponent" :userName="userName" />
+  <RouterView :menus="menus" :userName="userName" />
   <component :is="currentFooterComponent"></component>
 </template>
 <script>
+import MainFooter from './components/layout/MainFooter.vue'
 import SubFooter from './components/layout/SubFooter.vue'
+import IconMenuBlood from './components/icons/IconMenuBlood.vue'
+
 export default {
   name: 'App',
-  components: { SubFooter },
+  components: { UserInfo, MainFooter, SubFooter },
   computed: {
     currentFooterComponent() {
-      return this.$route.path === '/' ? '' : 'SubFooter'
+      return this.$route.path === '/' ? 'MainFooter' : 'SubFooter'
+    },
+    currentHeaderComponent() {
+      return this.$route.path === '/' ? 'UserInfo' : ''
     }
   }
 }

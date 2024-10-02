@@ -1,10 +1,15 @@
-<script setup></script>
-
+<script setup>
+defineProps(['menus', 'userName'])
+import IconMenuBlood from '@/components/icons/IconMenuBlood.vue'
+</script>
 <template>
-  <main class="mainWrap">
-    <RouterLink to="/blood">혈압측정</RouterLink>
-    <RouterLink to="/about">신장측정</RouterLink>
-    <RouterLink to="/about">체성분측정</RouterLink>
-    <RouterLink to="/about">종합결과 </RouterLink>
+  <main>
+    <ul class="mainWrap">
+      <li v-for="menu in menus" :key="menu.id">
+        <RouterLink :to="menu.link"
+          ><i><IconMenuBlood /></i>{{ menu.title }}</RouterLink
+        >
+      </li>
+    </ul>
   </main>
 </template>

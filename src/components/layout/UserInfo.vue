@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'SubHeader',
+  name: 'UserInfo',
   props: {
     userName: { type: String, required: true }
   }
