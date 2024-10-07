@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>북구노인종합복지관</h1>
+    <h1>푸른마을 주공3단지 아파트 경로당</h1>
     <div>{{ headerTitle }}</div>
     <button>설정</button>
   </header>

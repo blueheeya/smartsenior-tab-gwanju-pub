@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: 'IconMenuBlood',
+  name: 'IconMenuSynthesis',
   props: {
     size: {
       type: [Number, String],
