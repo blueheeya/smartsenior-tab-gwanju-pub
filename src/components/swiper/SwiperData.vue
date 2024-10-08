@@ -35,7 +35,8 @@ export default {
 <style scoped>
 .swiper {
   width: 100%;
-  height: 300px;
+  height: 608px;
+  background: var(--gray-color-600);
 }
 .swiper-slide {
   display: flex;
@@ -50,5 +51,19 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper-pagination {
+  background-color: #333 !important;
+  padding: 10px;
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #fff !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
 </style>

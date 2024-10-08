@@ -18,25 +18,25 @@ const router = createRouter({
       path: '/blood',
       name: 'bload',
       component: BloodView,
-      props: (route) => ({ menus: route.params.menus })
+      props: true
     },
     {
       path: '/height',
       name: 'height',
       component: HeightView,
-      props: (route) => ({ menus: route.params.menus })
+      props: true
     },
     {
       path: '/body',
       name: 'body',
       component: BodyView,
-      props: (route) => ({ menus: route.params.menus })
+      props: true
     },
     {
       path: '/synthesis',
       name: 'synthesis',
       component: SynthesisView,
-      props: (route) => ({ menus: route.params.menus })
+      props: true
     }
   ]
 })

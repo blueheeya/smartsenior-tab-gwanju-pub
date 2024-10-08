@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import MainHeader from './components/layout/MainHeader.vue'
 import UserInfo from './components/layout/UserInfo.vue'
-import TopContainer from './components/layout/TopContainer.vue'
 import SwiperData from './components/swiper/SwiperData.vue'
 
 const menus = ref([
@@ -35,30 +34,32 @@ const menus = ref([
     link: '/synthesis'
   }
 ])
-const headerTitle = ref('푸른마을 주공3단지 아파트 경로당')
 const userName = ref('홍길동')
 </script>
 
 <template>
-  <TopContainer>
-    <MainHeader :headerTitle="headerTitle" />
-    <SwiperData />
-  </TopContainer>
+  <MainHeader />
+  <SwiperData />
   <component :is="currentHeaderComponent" :userName="userName" />
   <RouterView :menus="menus" :userName="userName" />
-  <MainFooter />
+  <component :is="currentFooterComponent"></component>
 </template>
 
 <script>
 import MainFooter from './components/layout/MainFooter.vue'
+import SubFooter from './components/layout/SubFooter.vue'
 
 export default {
   name: 'App',
   components: {
     UserInfo,
-    MainFooter
+    MainFooter,
+    SubFooter
   },
   computed: {
+    currentFooterComponent() {
+      return this.$route.path === '/' ? 'MainFooter' : 'SubFooter'
+    },
     currentHeaderComponent() {
       return this.$route.path === '/' ? 'UserInfo' : ''
     }
