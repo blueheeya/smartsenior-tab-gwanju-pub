@@ -13,16 +13,22 @@
   --fn-background: #f1f5f5;
   /*border color*/
   --border-color: #dddddd;
+  /*number color*/
+  --number-color: #5672ed;
+  /*resultLevel color*/
+  --result-level-low: #b472e4;
+  --result-level-normal: #0e4194;
+  --result-level-high: #e52828;
   /*boder-radius*/
   --border-radius-sm: 4px;
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
   --border-radius-xl: 24px;
   /*font-size*/
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1rem; /*16px*/
-  --font-size-lg: 1.125rem; /*16px*/
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem; /*16px*/
+  --font-size-md: 1.5rem; /*24px*/
+  --font-size-lg: 2.25rem; /*36px*/
   --font-size-xl: 2.5rem; /*40px*/
   --font-size-xxl: 3.5rem; /*56px*/
   --font-size-xxxl: 3.75rem; /*60px*/

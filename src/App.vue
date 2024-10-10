@@ -30,13 +30,18 @@ const menus = ref([
   },
   {
     id: '4',
-    title: '종합결과',
-    icon: 'iconMenuSynthesis',
-    link: '/synthesis'
+    title: '평행측정',
+    icon: 'iconMenuParallel',
+    link: '/parallel'
   }
 ])
 const headerTitle = ref('푸른마을 주공3단지 아파트 경로당')
-const userName = ref('홍길동')
+const userData = ref({
+  userName: '홍길동',
+  userAge: '70',
+  userGender: '남',
+  userHeight: '170'
+})
 </script>
 
 <template>
@@ -44,8 +49,8 @@ const userName = ref('홍길동')
     <MainHeader :headerTitle="headerTitle" />
     <SwiperData />
   </TopContainer>
-  <component :is="currentHeaderComponent" :userName="userName" />
-  <RouterView :menus="menus" :userName="userName" />
+  <component :is="currentHeaderComponent" :userData="userData" />
+  <RouterView :menus="menus" :userData="userData" />
   <MainFooter />
 </template>
 

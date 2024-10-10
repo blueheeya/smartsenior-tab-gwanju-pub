@@ -55,7 +55,11 @@ body {
   font-size: var(--font-size-xxl);
   font-weight: 700;
 }
-.userInfoWrap button {
+.userInfoWrap > div {
+  display: flex;
+  gap: 8px;
+}
+.userInfoWrap > div > button {
   width: 269px;
   height: 96px;
   border-radius: 10px;
@@ -74,8 +78,6 @@ body {
   gap: 0.75em;
   width: 100%;
   height: 100%;
-  padding: 40px;
-  padding-bottom: 100px;
 }
 .mainMenuWrap > li {
   width: calc(50% - 6px);
@@ -114,6 +116,9 @@ i.menuIcon {
 .iconMenuSynthesis {
   background: url('../images/icon/iconMenuSynthesis.svg');
 }
+.iconMenuParallel {
+  background: url('../images/icon/iconMenuParallel.svg');
+}
 i.typeIcon {
   position: absolute;
   display: block;
@@ -138,13 +143,270 @@ i.typeIcon.cable {
 .footerWrap button {
   padding: 20px;
 }
+
+/*sub 공통사항*/
+.subContentsWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+.subContentsWrap > div {
+  width: 100%;
+  padding: 24px 16px;
+  background: var(--white-color);
+  border: solid 1px var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+.subContentsWrap > div > p {
+  width: 100%;
+  margin-bottom: 4px;
+  color: var(--number-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-align: center;
+}
+.subContentsWrap > div > h4 {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+.subContentsWrap > div > div > ul.subContentTxt {
+  width: 100%;
+  color: var(--gray-color-600);
+  font-size: var(--font-size-md);
+}
+.subContentsWrap > div > div > ul.subContentTxt > li {
+  margin-bottom: 12px;
+}
+.subContentsWrap > div > div > ul.center {
+  text-align: center;
+}
+.subContentsWrap > div > div > div.imgBox {
+  display: flex;
+  justify-content: center;
+}
+.subContentsWrap > div > div.halfImgWrap {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+/*Layer popup*/
 /****************************** E :  Global Style **/
 
 /** S : Page ******************************/
+
+/*종합결과*/
+.synthesisWrap h2,
+.bloodWrap h2 {
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
 .synthesisWrap {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 20px;
+  border: 1px solid var(--gray-color-300);
+  border-radius: var(--border-radius-lg);
+  background: var(--white-color);
+}
+.synthesisWrap .statusWrap {
+  display: flex;
+  width: 80%;
+}
+.statusBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 25%;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-right: 1px solid var(--gray-color-300);
+}
+.statusIcon {
+  text-align: center;
+  font-size: var(--font-size-md);
+}
+.statusIcon::before {
+  content: '';
+  display: block;
+  width: 107px;
+  height: 107px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+}
+.highStatus {
+  color: #e52828;
+}
+.highStatus::before {
+  background-image: url('../images/icon/iconValueHigh.png');
+}
+
+.normalStatus {
+  color: #0e4194;
+}
+.normalStatus::before {
+  background-image: url('../images/icon/iconValueNormal.png');
+}
+
+.lowStatus {
+  color: #b472e4;
+}
+.lowStatus::before {
+  background-image: url('..//images/icon/iconValueLow.png');
+}
+.synthesisWrap .userDataWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  width: 20%;
+  height: 100%;
+  padding: 20px;
+}
+.synthesisWrap .userDataWrap ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.synthesisWrap .userDataWrap ul li:first-child {
+  font-size: var(--font-size-md);
+}
+.synthesisWrap .userDataWrap ul li:last-child {
+  display: flex;
+  justify-content: right;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+.bloodWrap {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 40px;
+  border-radius: var(--border-radius-lg);
+}
+.bloodWrap > div {
+  width: 50%;
+}
+.bloodWrap .bloodDataBox > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.bloodWrap .bloodDataBox > div > ul {
+  width: 80%;
+}
+.bloodWrap .bloodDataBox > div > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: var(--font-size-md);
+}
+.bloodWrap .bloodDataBox > div > ul > li > span {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+.bloodIcon {
+  content: '';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 128px;
+  padding-bottom: 30px;
+  font-size: var(--font-size-md);
+  text-align: center;
+  color: var(--white-color);
+  background-size: cover;
+}
+.highBlood {
+  background: url('../images/icon/iconHeartHigh.png');
+}
+.normalBlood {
+  background: url('../images/icon/iconHeartNormal.png');
+}
+.lowBlood {
+  background: url('../images/icon/iconHeartLow.png');
+}
+.bloodWrap .bloodClassCart {
+  padding: 0 40px;
+}
+.bloodWrap .bloodClassCart img {
+  width: 100%;
+}
+.chartWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.chartWrap .chartBox {
+  width: calc(100% / 2 - 10px);
+  padding: 20px;
+  border: solid 1px var(--gray-color-300);
+  border-radius: var(--border-radius-md);
+  background: var(--white-color);
+}
+.chartWrap .chartBox > h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 20px;
+  font-size: var(--font-size-lg);
+}
+.chartWrap .chartBox > h2 span {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+}
+.chartWrap .chartBox .chartItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background: var(--gray-color-300);
+}
+.chartWrap .chartBox .chartItem .progress {
+  width: auto;
+  background: linear-gradient(to right, #b472e4, #0e4194);
+  padding: 10px 15px;
+  border-radius: 0 60px 60px 0;
+  color: var(--white-color);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  text-align: right;
+}
+.chartWrap .chartBox .chartLavel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.chartWrap .chartBox .chartLavel > span {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: var(--font-size-md);
+  border-left: solid 1px var(--gray-color-300);
+}
+.chartWrap .chartBox .chartLavel > span:nth-child(1) {
+  color: var(--result-level-low);
+}
+.chartWrap .chartBox .chartLavel > span:nth-child(2) {
+  color: var(--result-level-normal);
+}
+.chartWrap .chartBox .chartLavel > span:nth-child(3) {
+  border-right: solid 1px var(--gray-color-300);
+  color: var(--result-level-high);
 }
 /****************************** E : Page **/
 
@@ -153,5 +415,63 @@ i.typeIcon.cable {
 
 /** S : Form ******************************/
 /****************************** E : Form **/
-@media (min-width: 1024px) {
+@media (max-width: 1080px) {
+  /** S :  Global Style ******************************/
+  /****************************** E :  Global Style **/
+
+  /** S : Page ******************************/
+  /*종합결과*/
+  .chartWrap .chartBox > h2 {
+    font-size: var(--font-size-lg);
+  }
+  .chartWrap .chartBox > h2 span {
+    font-size: var(--font-size-sm);
+  }
+  /****************************** E : Page **/
+
+  /** S : Table ******************************/
+  /****************************** E : Table **/
+
+  /** S : Form ******************************/
+  /****************************** E : Form **/
+}
+@media (max-width: 1000px) {
+  /** S :  Global Style ******************************/
+  /****************************** E :  Global Style **/
+
+  /** S : Page ******************************/
+  /*종합결과*/
+  .synthesisWrap h2,
+  .bloodWrap h2 {
+    font-size: var(--font-size-md);
+  }
+  .synthesisWrap {
+    flex-direction: column;
+  }
+  .synthesisWrap .statusWrap {
+    width: 100%;
+  }
+  .statusBox:last-child {
+    border-right: none;
+  }
+  /****************************** E : Page **/
+
+  /** S : Table ******************************/
+  /****************************** E : Table **/
+
+  /** S : Form ******************************/
+  /****************************** E : Form **/
+}
+@media (max-width: 640px) {
+  /** S :  Global Style ******************************/
+  /****************************** E :  Global Style **/
+
+  /** S : Page ******************************/
+  /****************************** E : Page **/
+
+  /** S : Table ******************************/
+  /****************************** E : Table **/
+
+  /** S : Form ******************************/
+  /****************************** E : Form **/
 }

@@ -1,18 +1,28 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import BackButton from '../button/BackButton.vue'
 
 defineProps({
-  menu: Object,
-  userName: String
+  userData: {
+    type: Object,
+    required: true
+  }
+})
+
+//route의 meta.title에서 각각의 페이지 타이틀을 받아옵니다.
+const route = useRoute()
+const pageTitle = computed(() => {
+  return route.meta.title || ''
 })
 </script>
 
 <template>
   <div class="subTitleWrap">
     <BackButton />
-    <h2 v-if="menu">{{ menu.title }}</h2>
+    <h2 v-if="pageTitle">{{ pageTitle }}</h2>
     <div class="nameTxt">
-      <b>{{ userName }}</b
+      <b>{{ userData.userName }}</b
       >님
     </div>
   </div>

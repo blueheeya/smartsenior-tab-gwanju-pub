@@ -1,9 +1,9 @@
 <script setup>
 defineProps(['menus', 'userName'])
-import MainContainer from '@/components/layout/MainContainer.vue'
+import PageLayout from '@/components/layout/PageLayout.vue'
 </script>
 <template>
-  <MainContainer>
+  <PageLayout :menus="menus" :userName="userName">
     <ul class="mainMenuWrap">
       <li v-for="menu in menus" :key="menu.id">
         <RouterLink :to="menu.link"
@@ -12,5 +12,5 @@ import MainContainer from '@/components/layout/MainContainer.vue'
         ></RouterLink>
       </li>
     </ul>
-  </MainContainer>
+  </PageLayout>
 </template>
