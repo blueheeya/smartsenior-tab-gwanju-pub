@@ -1,8 +1,9 @@
 <template>
   <div class="chartBox">
-    <h2>
-      {{ chartName }}<span>표준범위: {{ range }}</span>
-    </h2>
+    <div class="chartTitle">
+      <h2>{{ chartName }}</h2>
+      <span><b>표준범위</b> {{ range }}</span>
+    </div>
     <div class="chartItem">
       <div class="progress" :style="{ width }">{{ value }}</div>
     </div>
@@ -18,7 +19,7 @@
 defineProps({
   chartName: String,
   range: String,
-  value: String,
+  value: Number,
   width: String
 })
 </script>

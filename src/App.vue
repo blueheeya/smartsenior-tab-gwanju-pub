@@ -5,6 +5,8 @@ import MainHeader from './components/layout/MainHeader.vue'
 import UserInfo from './components/layout/UserInfo.vue'
 import TopContainer from './components/layout/TopContainer.vue'
 import SwiperData from './components/swiper/SwiperData.vue'
+import LayerPopup from '@/components/layerPopup/LayerPopup.vue'
+import { popupStore } from './stores/popupStore'
 
 const menus = ref([
   {
@@ -42,6 +44,10 @@ const userData = ref({
   userGender: '남',
   userHeight: '170'
 })
+const resetMeasurement = () => {
+  popupStore.closePopup()
+  // 여기에 측정 리셋 로직 추가
+}
 </script>
 
 <template>
@@ -49,8 +55,24 @@ const userData = ref({
     <MainHeader :headerTitle="headerTitle" />
     <SwiperData />
   </TopContainer>
-  <component :is="currentHeaderComponent" :userData="userData" />
-  <RouterView :menus="menus" :userData="userData" />
+  <div class="dataWrap">
+    <component :is="currentHeaderComponent" :userData="userData" />
+    <LayerPopup
+      :isOpen="popupStore.isOpen"
+      :title="popupStore.title"
+      :contents="popupStore.contents"
+      :synthesisLink="popupStore.synthesisLink"
+      :showCloseButton="true"
+      :showReturnButton="true"
+      :showSynthesisButton="true"
+      @close="popupStore.closePopup()"
+      @return="resetMeasurement"
+    >
+      <!-- <h2>{{ popupStore.title }}이 완료되었습니다.</h2>
+      <p>{{ popupStore.content }}</p> -->
+    </LayerPopup>
+    <RouterView :menus="menus" :userData="userData" />
+  </div>
   <MainFooter />
 </template>
 
@@ -61,11 +83,36 @@ export default {
   name: 'App',
   components: {
     UserInfo,
-    MainFooter
+    MainFooter,
+    LayerPopup
   },
   computed: {
     currentHeaderComponent() {
       return this.$route.path === '/' ? 'UserInfo' : ''
+    }
+  },
+  data() {
+    return {
+      popupOpen: false,
+      popupTitle: '측정 결과',
+      popupContent: '여기에 측정 결과를 표시합니다.'
+    }
+  },
+  methods: {
+    openPopup() {
+      this.popupOpen = true
+    },
+    closePopup() {
+      this.popupOpen = false
+    },
+    resetMeasurement() {
+      this.closePopup()
+      // 여기에 측정 리셋 로직 추가
+      console.log('측정을 다시 시작합니다.')
+    },
+    showSynthesisView() {
+      // 종합 결과 확인 로직
+      console.log('종합 결과를 확인합니다.')
     }
   }
 }

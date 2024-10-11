@@ -5,6 +5,7 @@ import HeightView from '../views/HeightView.vue'
 import BodyView from '../views/BodyView.vue'
 import SynthesisView from '../views/SynthesisView.vue'
 import ParallelView from '../views/ParallelView.vue'
+import RecordView from '@/views/RecordView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,7 +33,7 @@ const router = createRouter({
     {
       path: '/body',
       name: 'body',
-      meta: { title: '채성분측정' },
+      meta: { title: '체성분측정' },
       component: BodyView,
       props: true
     },
@@ -47,7 +48,7 @@ const router = createRouter({
       path: '/record',
       name: 'record',
       meta: { title: '측정이력' },
-      component: BodyView,
+      component: RecordView,
       props: true
     },
     {

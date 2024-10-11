@@ -2,6 +2,7 @@
   /*color*/
   --primary-color: #3f70af;
   --white-color: #ffffff;
+  --black-color: #000000;
   --gray-color-100: #f9fafb;
   --gray-color-200: #eff1f4;
   --gray-color-300: #e5e7eb;
@@ -15,6 +16,8 @@
   --border-color: #dddddd;
   /*number color*/
   --number-color: #5672ed;
+  /*messege color*/
+  --messege-color: #5672ed;
   /*resultLevel color*/
   --result-level-low: #b472e4;
   --result-level-normal: #0e4194;
@@ -23,15 +26,18 @@
   --border-radius-sm: 4px;
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
-  --border-radius-xl: 24px;
+  --border-radius-xl: 30px;
   /*font-size*/
-  --font-size-xs: 0.875rem;
-  --font-size-sm: 1rem; /*16px*/
-  --font-size-md: 1.5rem; /*24px*/
+  --font-size-xxxs: 1.25rem; /*20px*/
+  --font-size-xxs: 1.5rem; /*24px*/
+  --font-size-xs: 1.75rem; /*28px*/
+  --font-size-sm: 1.875rem; /*30px*/
+  --font-size-md: 2rem; /*32px*/
   --font-size-lg: 2.25rem; /*36px*/
   --font-size-xl: 2.5rem; /*40px*/
   --font-size-xxl: 3.5rem; /*56px*/
   --font-size-xxxl: 3.75rem; /*60px*/
+  --font-size-xxxxl: 4.375rem; /*70px*/
   /*padding*/
   --padding-sm: 0.5rem;
   --padding-md: 1rem;

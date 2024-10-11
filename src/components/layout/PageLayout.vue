@@ -22,9 +22,7 @@ const currentMenu = computed(() => {
 const pageClass = computed(() => {
   // 현재 라우트 이름이나 경로에 따라 클래스를 반환
   switch (route.name) {
-    case 'blood':
-    case 'body':
-    case 'parallel':
+    case 'record':
       return 'subLayout'
     default:
       return 'defaultLayout'
