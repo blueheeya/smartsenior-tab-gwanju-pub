@@ -1,12 +1,6 @@
 <script setup>
-import { computed } from 'vue'
 import PageLayout from '@/components/layout/PageLayout.vue'
-const props = defineProps(['menus', 'userName'])
-
-const hasData = computed(() => (menuId) => {
-  const menu = props.menus.find((m) => m.id === menuId)
-  return menu && menu.data
-})
+defineProps(['menus', 'userName'])
 </script>
 <template>
   <PageLayout :menus="menus" :userName="userName">
@@ -17,7 +11,7 @@ const hasData = computed(() => (menuId) => {
           }}<i class="typeIcon" :class="menu.type"></i>
         </RouterLink>
         <!-- S : 측정 데이터 존재할 때 나타남 data{} 가 존재해야지만 보임 -->
-        <ul class="recordWrap" :style="{ display: hasData(menu.id) ? 'flex' : 'none' }">
+        <ul class="recordWrap" v-show="menu.dataStatus" style="display: flex">
           <li v-if="menu.data">
             <span>{{ menu.data.value }}</span>
             {{ menu.data.dataType }}

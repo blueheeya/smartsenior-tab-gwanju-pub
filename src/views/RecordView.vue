@@ -2,11 +2,11 @@
 import { ref } from 'vue'
 import PageLayout from '@/components/layout/PageLayout.vue'
 defineProps(['menus', 'userName'])
-const num = ref(1)
+const num = ref(0)
 </script>
 <template>
   <PageLayout :menus="menus" :userName="userName">
-    <div v-if="menus.some((menu) => menu.data)">
+    <div v-if="menus.some((menu) => menu.data && menu.dataStatus !== false)">
       <table v-for="(menu, i) in menus" :key="menu.id" class="tableType1">
         <colgroup>
           <col width="10%" />
@@ -14,7 +14,7 @@ const num = ref(1)
           <col width="25%" />
           <col width="auto" />
         </colgroup>
-        <tr v-if="menu.data">
+        <tr v-if="menu.data && menu.dataStatus !== false">
           <td>{{ num + i }}</td>
           <td>
             <span>{{ menu.data.dataName }}</span>

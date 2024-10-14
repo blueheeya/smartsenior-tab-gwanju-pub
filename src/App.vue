@@ -8,8 +8,8 @@ import SwiperData from './components/swiper/SwiperData.vue'
 import LayerPopup from '@/components/layerPopup/LayerPopup.vue'
 import { popupStore } from './stores/popupStore'
 import MainFooter from './components/layout/MainFooter.vue'
-// menus의 typeStatus : 기기연결 상태입니다.
-// menus의 data가 존재할때만 메뉴에 데이터 값이 나타납니다.
+// menus의 typeStatus : false 일때만 기기연결이 나타납니다.
+// menus의 dataStatus : true 일때만 메뉴에 데이터 값이 나타납니다.
 const menus = ref([
   {
     id: '1',
@@ -17,13 +17,14 @@ const menus = ref([
     icon: 'iconMenuBlood',
     type: 'cable',
     typeStatus: false,
-    link: '/blood'
-    // data: {
-    //   dataName: '혈압',
-    //   value: '150/80',
-    //   dataType: 'mmHg',
-    //   dateTime: '2024-10-14 11:17:00'
-    // }
+    link: '/blood',
+    data: {
+      dataName: '혈압',
+      value: '150/80',
+      dataType: 'mmHg',
+      dateTime: '2024-10-14 11:17:00'
+    },
+    dataStatus: false
   },
   {
     id: '2',
@@ -31,13 +32,14 @@ const menus = ref([
     icon: 'iconMenuHeight',
     type: 'cable',
     typeStatus: true,
-    link: '/height'
-    // data: {
-    //   dataName: '신장',
-    //   value: '180',
-    //   dataType: 'cm',
-    //   dateTime: '2024-10-14 11:17:00'
-    // }
+    link: '/height',
+    data: {
+      dataName: '신장',
+      value: '180',
+      dataType: 'cm',
+      dateTime: '2024-10-14 11:17:00'
+    },
+    dataStatus: true
   },
   {
     id: '3',
@@ -45,13 +47,14 @@ const menus = ref([
     icon: 'iconMenuBody',
     type: 'cable',
     typeStatus: true,
-    link: '/body'
-    // data: {
-    //   dataName: '체성분',
-    //   value: '24.2',
-    //   dataType: 'BMI',
-    //   dateTime: '2024-10-14 11:17:00'
-    // }
+    link: '/body',
+    data: {
+      dataName: '체성분',
+      value: '24.2',
+      dataType: 'BMI',
+      dateTime: '2024-10-14 11:17:00'
+    },
+    dataStatus: true
   },
   {
     id: '4',
@@ -59,13 +62,14 @@ const menus = ref([
     icon: 'iconMenuParallel',
     type: '',
     typeStatus: true,
-    link: '/parallel'
-    // data: {
-    //   dataName: '평행',
-    //   value: '80',
-    //   dataType: '점',
-    //   dateTime: '2024-10-14 11:17:00'
-    // }
+    link: '/parallel',
+    data: {
+      dataName: '평행',
+      value: '80',
+      dataType: '점',
+      dateTime: '2024-10-14 11:17:00'
+    },
+    dataStatus: false
   }
 ])
 const headerTitle = ref('푸른마을 주공3단지 아파트 경로당')
