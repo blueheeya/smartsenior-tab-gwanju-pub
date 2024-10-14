@@ -1,11 +1,32 @@
 <script setup>
+import { ref } from 'vue'
 import PageLayout from '@/components/layout/PageLayout.vue'
 defineProps(['menus', 'userName'])
+const num = ref(1)
 </script>
-
 <template>
   <PageLayout :menus="menus" :userName="userName">
-    <div>측정이력 페이지 내용</div>
-    <!-- 여기에 측정이력 페이지의 특정 내용을 추가 -->
+    <div v-if="menus.some((menu) => menu.data)">
+      <table v-for="(menu, i) in menus" :key="menu.id" class="tableType1">
+        <colgroup>
+          <col width="10%" />
+          <col width="20%" />
+          <col width="25%" />
+          <col width="auto" />
+        </colgroup>
+        <tr v-if="menu.data">
+          <td>{{ num + i }}</td>
+          <td>
+            <span>{{ menu.data.dataName }}</span>
+          </td>
+          <td>
+            <span>{{ menu.data.value }}</span>
+            {{ menu.data.dataType }}
+          </td>
+          <td>{{ menu.data.dateTime }}</td>
+        </tr>
+      </table>
+    </div>
+    <div v-else class="nodata"><p>측정 데이터가 없습니다.</p></div>
   </PageLayout>
 </template>

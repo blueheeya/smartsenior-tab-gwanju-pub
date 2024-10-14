@@ -67,7 +67,7 @@ section::-webkit-scrollbar-button {
   width: 100%;
   min-height: 100%;
   height: auto;
-  padding: 56px 24px;
+  padding: 56px 32px;
   background: var(--white-color);
   border-radius: 20px;
   border: solid 1px var(--border-color);
