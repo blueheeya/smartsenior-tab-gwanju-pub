@@ -8,7 +8,8 @@ import SwiperData from './components/swiper/SwiperData.vue'
 import LayerPopup from '@/components/layerPopup/LayerPopup.vue'
 import { popupStore } from './stores/popupStore'
 import MainFooter from './components/layout/MainFooter.vue'
-
+// menus의 typeStatus : 기기연결 상태입니다.
+// menus의 data가 존재할때만 메뉴에 데이터 값이 나타납니다.
 const menus = ref([
   {
     id: '1',
