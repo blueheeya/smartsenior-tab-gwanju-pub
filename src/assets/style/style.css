@@ -66,6 +66,7 @@ body {
   color: var(--primary-color);
   font-size: var(--font-size-xl);
   background: #dcebfe;
+  font-weight: 700;
 }
 
 /*main*/
@@ -98,6 +99,7 @@ body {
   background: var(--primary-color);
   color: var(--white-color);
   font-size: var(--font-size-xxxl);
+  font-weight: 700;
 }
 i.menuIcon {
   display: block;
